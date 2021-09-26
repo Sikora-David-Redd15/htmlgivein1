@@ -1,0 +1,137 @@
+body{
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+}
+
+p, h1, h2, h3, h4{
+    margin: 25px;
+}
+
+img {
+    height: fit-content;
+    width: 100%;
+    border: rgb(30, 148, 216);
+    border-radius: 40px;
+    border-width: 4px;
+    border-style: solid;
+    border-right: transparent;
+    transition-property: width;
+}
+
+div{
+    height: fit-content;
+    width: 100%;
+}
+table{
+    margin: 25px;
+    border: 0px;
+    color: white;
+    justify-items: center;
+    width: 80%;
+}
+td{
+    border: 2px solid rgb(30, 148, 216);
+}
+
+ul{
+    color: white;
+}
+
+#titleh1{
+    color: rgb(30, 148, 216);
+    animation-name: maintitle;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    text-shadow: 2px 2px 5px black;
+    margin-left: 15%;
+}
+
+#grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 10px;
+    max-height: fit-content;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+
+}
+
+#mainpanel{
+    color: white;
+}
+
+
+
+#bord {
+    border: rgb(30, 148, 216);
+    border-style: solid;
+    border-radius: 40px;
+    border-width: 8px;
+    border-left: transparent;
+    border-right: transparent;
+    background-color: rgb(24, 57, 77);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#stickypic{
+    z-index: -1;
+    position: sticky;
+    top: 0%;
+}
+
+#bordstk {
+    border: rgb(30, 148, 216);
+    border-style: solid;
+    border-radius: 40px;
+    border-left: transparent;
+    border-width: 4px;
+    background-color: rgb(24, 57, 77);
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    z-index: -1;
+    position: sticky;
+    top: 0%;
+}
+
+#move{
+    color: white;
+    width: 100%;
+    margin: 0;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    animation-name: movingtext;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+a:visited {
+    color: black;
+  }
+a:link {
+    color: rgb(30, 148, 216);
+  }
+a:hover {
+    color: white;
+}
+
+@keyframes maintitle {
+    0% {color: rgb(30, 148, 216); text-shadow: 2px 2px 5px black;}
+    50% {color: black;text-shadow: 2px 2px 5px rgb(30, 148, 216);}
+    100% {color: rgb(30, 148, 216);text-shadow: 2px 2px 5px black;}
+  }
+
+@keyframes movingtext { 
+    0%   {transform: translateX(-100%);}
+    50%  {transform: translateX(100%);}
+    100% {transform: translateX(-100%);}
+}
