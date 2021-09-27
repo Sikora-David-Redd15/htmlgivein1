@@ -1,6 +1,8 @@
+/*Sequencing code by comments*/
+
+/*----------------------------------------Basic card formatting----------------------------------------*/
 body{
 background-color: rgb(255, 255, 255);
-color: rgb(0, 0, 0);
 }
 
 p, h1, h2, h3, h4{
@@ -20,7 +22,6 @@ img {
 
 div{
     height: fit-content;
-    width: 100%;
 }
 table{
     margin: 25px;
@@ -46,22 +47,9 @@ ul{
     margin-left: 15%;
 }
 
-#grid{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-gap: 10px;
-    max-height: fit-content;
-    margin-left: 10%;
-    margin-right: 10%;
-    width: 80%;
-
-}
-
 #mainpanel{
     color: white;
 }
-
-
 
 #bord {
     border: rgb(30, 148, 216);
@@ -78,13 +66,24 @@ ul{
     width: 80%;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
+/*----------------------------------------Making the first part grid----------------------------------------*/
+#grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 10px;
+    max-height: fit-content;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+}
+
+/*----------------------------------------Sticky cards, both pic and the description for responsivity----------------------------------------*/
 #stickypic{
     z-index: -1;
     position: sticky;
-    top: 0%;
+    top: 1%;
 }
 
 #bordstk {
@@ -99,19 +98,27 @@ ul{
     margin-right: 10%;
     z-index: -1;
     position: sticky;
-    top: 0%;
+    top: 1%;
 }
 
+/*----------------------------------------Movement animation call----------------------------------------*/
 #move{
-    color: white;
-    width: 100%;
+    width: fit-content;
     margin: 0;
-    margin-top: 10%;
-    margin-bottom: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
     animation-name: movingtext;
-    animation-duration: 10s;
+    animation-duration: 5s;
+    animation-direction: alternate;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
+}
+
+/*----------------------------------------Link text and link underline coloring----------------------------------------*/
+#linktext{
+    color: white;
+    width: fit-content;
+    margin: 0;
 }
 
 a:visited {
@@ -124,14 +131,38 @@ a:hover {
     color: white;
 }
 
+/*----------------------------------------Main title color-shadow animation----------------------------------------*/
 @keyframes maintitle {
     0% {color: rgb(30, 148, 216); text-shadow: 2px 2px 5px black;}
     50% {color: black;text-shadow: 2px 2px 5px rgb(30, 148, 216);}
     100% {color: rgb(30, 148, 216);text-shadow: 2px 2px 5px black;}
   }
 
-@keyframes movingtext { 
-    0%   {transform: translateX(-100%);}
-    50%  {transform: translateX(100%);}
-    100% {transform: translateX(-100%);}
+/*----------------------------------------Media screen to make the animation responsive----------------------------------------*/
+@media screen and (max-width: 649px) {
+    @keyframes movingtext { 
+        from   {transform: translateX(0%);}
+        to    {transform: translateX(0%);}
+    }
+}
+
+@media screen and (min-width: 650px) and (max-width: 849px) {
+    @keyframes movingtext { 
+        from   {transform: translateX(-25%);}
+        to    {transform: translateX(25%);}
+    }
+}
+
+@media screen and (min-width: 850px) and (max-width: 1499px) {
+    @keyframes movingtext { 
+        from   {transform: translateX(-50%);}
+        to    {transform: translateX(50%);}
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    @keyframes movingtext { 
+        from   {transform: translateX(-130%);}
+        to    {transform: translateX(130%);}
+}
 }
